@@ -1,0 +1,76 @@
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\7z.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\BasicExtractExplorer.exe.config
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\BasicExtractExplorer.exe
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\BasicExtractExplorer.pdb
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.Extensions.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Newtonsoft.Json.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.Internal.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.ProvideTAP.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\SevenZipSharp.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.xml
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.Extensions.xml
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Newtonsoft.Json.xml
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.Internal.pdb
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.Internal.xml
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.Internal.dll.config
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.ProvideTAP.pdb
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.ProvideTAP.dll.config
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Interop.WMPLib.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\AxInterop.WMPLib.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.csprojAssemblyReference.cache
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\Interop.WMPLib.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\AxInterop.WMPLib.dll
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.csproj.ResolveComReference.cache
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.About.resources
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.AddToArchive.resources
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.ExtractTo.resources
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.MainForm.resources
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.Password.resources
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.Processing.resources
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.Properties.Resources.resources
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.csproj.GenerateResource.cache
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.csproj.CoreCompileInputs.cache
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.csproj.CopyComplete
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.exe
+D:\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.pdb
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\7z.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\BasicExtractExplorer.exe.config
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\BasicExtractExplorer.exe
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\BasicExtractExplorer.pdb
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Newtonsoft.Json.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.Internal.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.ProvideTAP.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\SevenZipSharp.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.xml
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Newtonsoft.Json.xml
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.Internal.pdb
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.Internal.xml
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.Internal.dll.config
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.ProvideTAP.pdb
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\nUpdate.ProvideTAP.dll.config
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\Interop.WMPLib.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\bin\x64\Release\AxInterop.WMPLib.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.csprojAssemblyReference.cache
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\Interop.WMPLib.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\AxInterop.WMPLib.dll
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.csproj.ResolveComReference.cache
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.About.resources
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.AddToArchive.resources
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.ExtractTo.resources
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.MainForm.resources
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.Password.resources
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.Processing.resources
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.Properties.Resources.resources
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.csproj.GenerateResource.cache
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.csproj.CoreCompileInputs.cache
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.csproj.CopyComplete
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.exe
+C:\Users\ji\Dropbox\My PC (LAPTOP-13ADOLPS)\Desktop\BasicExtractExplorer-master\BasicExtractExplorer\BasicExtractExplorer\obj\x64\Release\BasicExtractExplorer.pdb
