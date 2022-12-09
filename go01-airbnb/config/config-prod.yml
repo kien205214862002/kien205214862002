@@ -1,0 +1,13 @@
+app:
+  Version: 1.0.0
+  Mode: production
+  Port: 4000
+  Secret: go01-airbnb-secret
+
+mysql:
+  Host: 127.0.0.1
+  Port: 3307
+  User: root
+  Password: 1234
+  DBName: go01-airbnb
+
