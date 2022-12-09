@@ -3,4 +3,4 @@ DROP TABLE IF EXISTS places;
 DROP TABLE IF EXISTS properties;
 DROP TABLE IF EXISTS cities;
 
-
+//how
