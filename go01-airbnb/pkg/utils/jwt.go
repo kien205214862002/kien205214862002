@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"go01-airbnb/config"
+	"go01-airbnb/pkg/common"
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
@@ -64,17 +65,32 @@ func ValidateJWT(accessToken string, cfg *config.Config) (*TokenPayload, error) 
 	})
 
 	if err != nil {
-		return nil, err
+		return nil, ErrInvalidToken
 	}
 
 	if !token.Valid {
-		return nil, errors.New("invalid token")
+		return nil, ErrInvalidToken
 	}
 
 	claims, ok := token.Claims.(*myClaims)
 	if !ok {
-		return nil, errors.New("invalid token")
+		return nil, ErrInvalidToken
 	}
 
 	return &claims.Payload, nil
 }
+
+// Khai báo lỗi liên quan đến token
+var (
+	ErrTokenNotFound = common.ErrUnauthorized(
+		errors.New("token not found"),
+	)
+
+	ErrEncodingToken = common.ErrUnauthorized(
+		errors.New("error encoding token"),
+	)
+
+	ErrInvalidToken = common.ErrUnauthorized(
+		errors.New("invalid token"),
+	)
+)

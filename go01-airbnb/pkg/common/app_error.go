@@ -29,20 +29,28 @@ func (e *AppError) Error() string {
 	return e.RootCauses().Error()
 }
 
-func NewUnauthorizedError(causes error, msg string) *AppError {
-	return NewErrorResponse(causes, http.StatusUnauthorized, msg)
+func ErrUnauthorized(causes error) *AppError {
+	return NewErrorResponse(causes, http.StatusUnauthorized, "you have no authorize")
 }
 
-func NewForbiddenError(causes error, msg string) *AppError {
-	return NewErrorResponse(causes, http.StatusForbidden, msg)
+func ErrForbidden(causes error) *AppError {
+	return NewErrorResponse(causes, http.StatusForbidden, "you have no permission")
 }
 
-func NewBadRequestError(causes error, msg string) *AppError {
-	return NewErrorResponse(causes, http.StatusForbidden, msg)
+func ErrBadRequest(causes error) *AppError {
+	return NewErrorResponse(causes, http.StatusBadRequest, "invalid request")
 }
 
-func NewErrorDB(causes error) *AppError {
-	return &AppError{causes, http.StatusInternalServerError, "something went wrong with DB"}
+func ErrNotFound(causes error) *AppError {
+	return &AppError{causes, http.StatusNotFound, "not found"}
+}
+
+func ErrDB(causes error) *AppError {
+	return &AppError{causes, http.StatusInternalServerError, "something went wrong with Database"}
+}
+
+func ErrInternal(causes error) *AppError {
+	return &AppError{causes, http.StatusInternalServerError, "something went wrong in the server"}
 }
 
 func NewCustomError(causes error, msg string) *AppError {
@@ -57,8 +65,18 @@ func ErrEntityNotFound(entity string, causes error) *AppError {
 	return NewCustomError(causes, fmt.Sprintf("%s not found", entity))
 }
 
-//func ErrEntityNotFound(entity string, causes error) *AppError {
-//	return NewCustomError(causes, fmt.Sprintf("%s not found", entity))
-//}
+func ErrCannotCreateEntity(entity string, causes error) *AppError {
+	return NewCustomError(causes, fmt.Sprintf("cannot create %s", entity))
+}
 
-// ErrCannotGetEntity, ErrCannotCreateEntity, ErrCannotUpdateEntity, ErrCannotDeleteEntity
+func ErrCannotUpdateEntity(entity string, causes error) *AppError {
+	return NewCustomError(causes, fmt.Sprintf("cannot update %s", entity))
+}
+
+func ErrCannotDeleteEntity(entity string, causes error) *AppError {
+	return NewCustomError(causes, fmt.Sprintf("cannot delete %s", entity))
+}
+
+func ErrEntityExisted(entity string, causes error) *AppError {
+	return NewCustomError(causes, fmt.Sprintf("%s already exists", entity))
+}

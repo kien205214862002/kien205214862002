@@ -2,7 +2,7 @@ package middleware
 
 import (
 	usermodel "go01-airbnb/internal/user/model"
-	"net/http"
+	"go01-airbnb/pkg/common"
 
 	"github.com/gin-gonic/gin"
 )
@@ -19,6 +19,6 @@ func (m *middleareManager) RequiredRoles(roles ...string) gin.HandlerFunc {
 			}
 		}
 
-		c.JSON(http.StatusForbidden, gin.H{"error": "you have no permission"})
+		panic(common.ErrForbidden(nil))
 	}
 }

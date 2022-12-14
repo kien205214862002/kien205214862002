@@ -2,15 +2,15 @@ package userusecase
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"go01-airbnb/config"
 	usermodel "go01-airbnb/internal/user/model"
+	"go01-airbnb/pkg/common"
 	"go01-airbnb/pkg/utils"
 )
 
 type UserRepository interface {
-	Create(context.Context, *usermodel.UserCreate) error
+	Create(context.Context, *usermodel.UserRegister) error
 	FindDataWithCondition(context.Context, map[string]any) (*usermodel.User, error)
 }
 
@@ -23,11 +23,11 @@ func NewUserUseCase(cfg *config.Config, userRepository UserRepository) *userUseC
 	return &userUseCase{cfg, userRepository}
 }
 
-func (u *userUseCase) Register(ctx context.Context, data *usermodel.UserCreate) error {
+func (u *userUseCase) Register(ctx context.Context, data *usermodel.UserRegister) error {
 	// Kiếm tra xem email đã tồn tại trong hệ thống hay chưa
 	user, _ := u.userRepository.FindDataWithCondition(ctx, map[string]any{"email": data.Email})
 	if user != nil {
-		return errors.New("email is existed")
+		return usermodel.ErrEmailExisted
 	}
 
 	// Validate data
@@ -37,12 +37,11 @@ func (u *userUseCase) Register(ctx context.Context, data *usermodel.UserCreate) 
 
 	// Chuẩn bị data trước khi tạo user
 	if err := data.PrepareCreate(); err != nil {
-		return err
+		return usermodel.ErrEmailOrPasswordInvalid
 	}
-	fmt.Println("Password:", data.Password)
 
 	if err := u.userRepository.Create(ctx, data); err != nil {
-		return errors.New("cannot create your account")
+		return usermodel.ErrCannotCreateAccount
 	}
 
 	return nil
@@ -54,17 +53,17 @@ func (u *userUseCase) Register(ctx context.Context, data *usermodel.UserCreate) 
 func (u *userUseCase) Login(ctx context.Context, data *usermodel.UserLogin) (*utils.Token, error) {
 	user, err := u.userRepository.FindDataWithCondition(ctx, map[string]any{"email": data.Email})
 	if err != nil {
-		return nil, errors.New("email or password invalid")
+		return nil, usermodel.ErrEmailOrPasswordInvalid
 	}
 
 	fmt.Println(user.Password, data.Password)
 	if err := utils.ComparePassword(user.Password, data.Password); err != nil {
-		return nil, errors.New("email or password invalid")
+		return nil, usermodel.ErrEmailOrPasswordInvalid
 	}
 
 	token, err := utils.GenerateJWT(utils.TokenPayload{Email: user.Email, Role: user.Role}, u.cfg)
 	if err != nil {
-		return nil, errors.New("internal server error")
+		return nil, common.ErrInternal(err)
 	}
 
 	return token, nil

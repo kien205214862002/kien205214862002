@@ -2,9 +2,9 @@ package userrepository
 
 import (
 	"context"
-	"errors"
 
 	usermodel "go01-airbnb/internal/user/model"
+	"go01-airbnb/pkg/common"
 
 	"gorm.io/gorm"
 )
@@ -18,17 +18,17 @@ func NewUserRepository(db *gorm.DB) *userRepository {
 	return &userRepository{db}
 }
 
-func (r *userRepository) Create(ctx context.Context, data *usermodel.UserCreate) error {
+func (r *userRepository) Create(ctx context.Context, data *usermodel.UserRegister) error {
 	db := r.db.Begin()
 
 	if err := db.Table(usermodel.User{}.TableName()).Create(data).Error; err != nil {
 		db.Rollback()
-		return err
+		return common.ErrDB(err)
 	}
 
 	if err := db.Commit().Error; err != nil {
 		db.Rollback()
-		return err
+		return common.ErrDB(err)
 	}
 
 	return nil
@@ -39,9 +39,9 @@ func (r *userRepository) FindDataWithCondition(ctx context.Context, conditions m
 
 	if err := r.db.Table(usermodel.User{}.TableName()).Where(conditions).First(&user).Error; err != nil {
 		if err == gorm.ErrRecordNotFound {
-			return nil, errors.New("record not found")
+			return nil, common.ErrEntityNotFound(usermodel.EntityName, err)
 		}
-		return nil, err
+		return nil, common.ErrDB(err)
 	}
 
 	return &user, nil

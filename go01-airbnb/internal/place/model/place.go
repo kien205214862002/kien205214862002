@@ -6,15 +6,19 @@ import (
 	"strings"
 )
 
+const EntityName = "place"
+
 type Place struct {
 	common.SQLModel
-	Owner_Id      int     `json:"ownerId" gorm:"column:owner_id"`
-	City_Id       int     `json:"cityId" gorm:"column:city_id"`
-	Name          string  `json:"name" gorm:"column:name"`
-	Address       string  `json:"address" gorm:"column:address"`
-	Lat           float64 `json:"lat" gorm:"column:lat"`
-	Lng           float64 `json:"lng" gorm:"column:lng"`
-	PricePerNight float64 `json:"pricePerNight" gorm:"column:price_per_night"`
+	OwnerId       int                `json:"-" gorm:"column:owner_id"`
+	Owner         *common.SimpleUser `json:"owner" gorm:"preload:false"`
+	CityId        int                `json:"cityId" gorm:"column:city_id"`
+	Name          string             `json:"name" gorm:"column:name"`
+	Address       string             `json:"address" gorm:"column:address"`
+	Cover         *common.Images     `json:"cover" gorm:"column:cover"`
+	Lat           float64            `json:"lat" gorm:"column:lat"`
+	Lng           float64            `json:"lng" gorm:"column:lng"`
+	PricePerNight float64            `json:"pricePerNight" gorm:"column:price_per_night"`
 }
 
 func (Place) TableName() string {

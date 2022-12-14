@@ -3,13 +3,14 @@ package userhttp
 import (
 	"context"
 	usermodel "go01-airbnb/internal/user/model"
+	"go01-airbnb/pkg/common"
 	"go01-airbnb/pkg/utils"
 
 	"github.com/gin-gonic/gin"
 )
 
 type UserUsecase interface {
-	Register(context.Context, *usermodel.UserCreate) error
+	Register(context.Context, *usermodel.UserRegister) error
 	Login(context.Context, *usermodel.UserLogin) (*utils.Token, error)
 }
 
@@ -23,16 +24,14 @@ func NewUserHandler(userUC UserUsecase) *userHandler {
 
 func (hdl *userHandler) Register() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		var data usermodel.UserCreate
+		var data usermodel.UserRegister
 
 		if err := c.ShouldBind(&data); err != nil {
-			c.JSON(400, gin.H{"error": err.Error()})
-			return
+			panic(common.ErrBadRequest(err))
 		}
 
 		if err := hdl.userUC.Register(c.Request.Context(), &data); err != nil {
-			c.JSON(400, gin.H{"error": err.Error()})
-			return
+			panic(err)
 		}
 
 		c.JSON(200, gin.H{"data": data.Id})
@@ -44,14 +43,12 @@ func (hdl *userHandler) Login() gin.HandlerFunc {
 		var credentials usermodel.UserLogin
 
 		if err := c.ShouldBind(&credentials); err != nil {
-			c.JSON(400, gin.H{"error": err.Error()})
-			return
+			panic(common.ErrBadRequest(err))
 		}
 
 		token, err := hdl.userUC.Login(c.Request.Context(), &credentials)
 		if err != nil {
-			c.JSON(400, gin.H{"error": err.Error()})
-			return
+			panic(err)
 		}
 
 		c.JSON(200, gin.H{"data": token})

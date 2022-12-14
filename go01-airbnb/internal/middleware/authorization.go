@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	"errors"
 	"go01-airbnb/pkg/utils"
 	"net/http"
 	"strings"
@@ -16,7 +15,7 @@ func extractTokenFromHeader(r *http.Request) (string, error) {
 	parts := strings.Split(bearerToken, " ")
 
 	if parts[0] != "Bearer" || len(parts) < 2 || strings.TrimSpace(parts[1]) == "" {
-		return "", errors.New("invalid token")
+		return "", utils.ErrInvalidToken
 	}
 
 	return parts[1], nil
@@ -30,20 +29,17 @@ func (m *middleareManager) RequiredAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		token, err := extractTokenFromHeader(c.Request)
 		if err != nil {
-			c.JSON(http.StatusUnauthorized, gin.H{"error": "Unauthorized"})
-			return
+			panic(err)
 		}
 
 		payload, err := utils.ValidateJWT(token, m.cfg)
 		if err != nil {
-			c.JSON(http.StatusUnauthorized, gin.H{"error": "Unauthorized"})
-			return
+			panic(err)
 		}
 
 		user, err := m.userRepo.FindDataWithCondition(c.Request.Context(), map[string]any{"email": payload.Email})
 		if err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": "Internal Server Error"})
-			return
+			panic(err)
 		}
 
 		// Lưu trữ data để có thể được truy cập ở các middleware hoặc handler tiếp theo

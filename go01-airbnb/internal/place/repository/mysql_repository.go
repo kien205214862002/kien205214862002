@@ -24,22 +24,29 @@ func (r *placeRepository) Create(ctx context.Context, place *placemodel.Place) e
 
 	if err := db.Table(place.TableName()).Create(place).Error; err != nil {
 		db.Rollback()
-		return common.NewErrorDB(err)
+		return common.ErrDB(err)
 	}
 
 	if err := db.Commit().Error; err != nil {
 		db.Rollback()
-		return common.NewErrorDB(err)
+		return common.ErrDB(err)
 	}
 
 	return nil
 }
 
 // Get places
-func (r *placeRepository) ListDataWithCondition(ctx context.Context, paging *common.Paging, filter *placemodel.Filter) ([]placemodel.Place, error) {
+func (r *placeRepository) ListDataWithCondition(
+	ctx context.Context,
+	paging *common.Paging,
+	filter *placemodel.Filter,
+	keys ...string,
+) ([]placemodel.Place, error) {
 	var data []placemodel.Place
 
-	db := r.db.Table(placemodel.Place{}.TableName())
+	// db := r.db.Table(placemodel.Place{}.TableName())
+	// Để không count những record bị soft delete ta cần dùng Model
+	db := r.db.Model(&data)
 
 	if v := filter.OwnerId; v > 0 {
 		db = db.Where("owner_id = ?", v)
@@ -49,14 +56,22 @@ func (r *placeRepository) ListDataWithCondition(ctx context.Context, paging *com
 		db = db.Where("city_id = ?", v)
 	}
 
+	if err := db.Count(&paging.Total).Error; err != nil {
+		return nil, common.ErrDB(err)
+	}
+
+	for _, v := range keys {
+		db = db.Preload(v)
+	}
+
 	if v := paging.Cursor; v != 0 {
 		db = db.Where("id > ?", v)
 	} else {
 		db = db.Offset((paging.Page - 1) * paging.Limit)
 	}
 
-	if err := db.Count(&paging.Total).Limit(paging.Limit).Find(&data).Error; err != nil {
-		return nil, err
+	if err := db.Limit(paging.Limit).Find(&data).Error; err != nil {
+		return nil, common.ErrDB(err)
 	}
 
 	if len(data) > 0 {
@@ -67,11 +82,21 @@ func (r *placeRepository) ListDataWithCondition(ctx context.Context, paging *com
 }
 
 // Get place by condition
-func (r *placeRepository) FindDataWithCondition(ctx context.Context, condition map[string]any) (*placemodel.Place, error) {
+func (r *placeRepository) FindDataWithCondition(ctx context.Context, condition map[string]any, keys ...string) (*placemodel.Place, error) {
 	var data placemodel.Place
 
-	if err := r.db.Where(condition).First(&data).Error; err != nil {
-		return nil, common.ErrEntityNotFound("place", err)
+	db := r.db.Table(placemodel.Place{}.TableName())
+
+	for _, v := range keys {
+		db = db.Preload(v)
+	}
+
+	if err := db.Where(condition).First(&data).Error; err != nil {
+		if err == gorm.ErrRecordNotFound {
+			return nil, common.ErrEntityNotFound(placemodel.EntityName, err)
+		}
+
+		return nil, common.ErrDB(err)
 	}
 
 	return &data, nil
@@ -82,7 +107,7 @@ func (r *placeRepository) Update(ctx context.Context, condition map[string]any, 
 	db := r.db.Table(placemodel.Place{}.TableName())
 
 	if err := db.Model(&placemodel.Place{}).Clauses(clause.Returning{}).Where(condition).Updates(place).Error; err != nil {
-		return err
+		return common.ErrDB(err)
 	}
 
 	return nil
@@ -91,7 +116,7 @@ func (r *placeRepository) Update(ctx context.Context, condition map[string]any, 
 // Delete place by condition
 func (r *placeRepository) Delete(ctx context.Context, condition map[string]any) error {
 	if err := r.db.Table(placemodel.Place{}.TableName()).Where(condition).Delete(&placemodel.Place{}).Error; err != nil {
-		return err
+		return common.ErrDB(err)
 	}
 
 	return nil
