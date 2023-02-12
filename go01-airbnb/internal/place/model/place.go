@@ -28,13 +28,25 @@ func (Place) TableName() string {
 func (p *Place) Validate() error {
 	p.Name = strings.TrimSpace(p.Name)
 	if p.Name == "" {
-		return errors.New("place name can't be blank")
+		return ErrNameIsEmpty
 	}
 
 	p.Address = strings.TrimSpace(p.Address)
 	if p.Address == "" {
-		return errors.New("place address can't be blank")
+		return ErrAddressIsEmpty
 	}
 
 	return nil
 }
+
+var (
+	ErrNameIsEmpty = common.NewCustomError(
+		errors.New("place name can't be blank"),
+		"place name can't be blank",
+	)
+
+	ErrAddressIsEmpty = common.NewCustomError(
+		errors.New("place address can't be blank"),
+		"place address can't be blank",
+	)
+)

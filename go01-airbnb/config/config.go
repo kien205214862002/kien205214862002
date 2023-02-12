@@ -9,13 +9,16 @@ import (
 type Config struct {
 	App   AppConfig
 	MySQL MySQLConfig
+	AWS   AWSConfig
+	Redis RedisConfig
 }
 
 type AppConfig struct {
-	Version string
-	Port    string
-	Mode    string
-	Secret  string
+	Version      string
+	Port         string
+	Mode         string
+	Secret       string
+	MigrationURL string
 }
 
 type MySQLConfig struct {
@@ -24,6 +27,21 @@ type MySQLConfig struct {
 	User     string
 	Password string
 	DBName   string
+}
+
+type AWSConfig struct {
+	Region    string
+	APIKey    string
+	SecretKey string
+	S3Bucket  string
+	S3Domain  string
+}
+
+type RedisConfig struct {
+	Host     string
+	Port     string
+	Password string
+	DB       int
 }
 
 func LoadConfig(filename string) (*Config, error) {

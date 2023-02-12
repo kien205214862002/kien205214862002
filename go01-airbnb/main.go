@@ -1,6 +1,7 @@
 package main
 
 import (
+	"go01-airbnb/cache"
 	"go01-airbnb/config"
 	"go01-airbnb/internal/middleware"
 	"net/http"
@@ -16,6 +17,9 @@ import (
 	uploadhttp "go01-airbnb/internal/upload/delivery/http"
 
 	"go01-airbnb/pkg/db/mysql"
+	"go01-airbnb/pkg/db/redis"
+	"go01-airbnb/pkg/logger"
+	"go01-airbnb/pkg/upload"
 	"go01-airbnb/pkg/utils"
 	"log"
 	"os"
@@ -41,21 +45,39 @@ func main() {
 		log.Fatal("Cannot connect to mysql", err)
 	}
 
+	utils.RunDBMigration(cfg)
+
+	// Khai báo Redis
+	redis, err := redis.NewRedisClient(cfg)
+	if err != nil {
+		log.Fatal("Cannot connect to redis", err)
+	}
+
+	// Khai báo S3
+	s3Provider := upload.NewS3Provider(cfg)
+
+	// Khia báo logger
+	sugarLogger := logger.NewZapLogger()
+
 	// Khai báo hashids
 	hasher := utils.NewHashIds(cfg.App.Secret, 10)
 
 	// Khai báo các lệ thuộc
-	placeRepo := placerepository.NewPlaceRepository(db)
+	placeRepo := placerepository.NewPlaceRepository(db, sugarLogger)
 	placeUC := placeusecase.NewPlaceUseCase(placeRepo)
 	placeHdl := placehttp.NewPlaceHandler(placeUC, hasher)
 
 	userRepo := userrepository.NewUserRepository(db)
+	userStore := cache.NewAuthUserCache(
+		userRepo,
+		cache.NewRedisCache(redis),
+	)
 	userUC := userusecase.NewUserUseCase(cfg, userRepo)
 	userHdl := userhttp.NewUserHandler(userUC)
 
-	uploadHdl := uploadhttp.NewUploadHandler()
+	uploadHdl := uploadhttp.NewUploadHandler(s3Provider)
 
-	mw := middleware.NewMiddlewareManager(cfg, userRepo)
+	mw := middleware.NewMiddlewareManager(cfg, userStore)
 
 	r := gin.Default()
 	// Global middleware, nghĩa là tất cả các routers đều phải đi qua middleware này
@@ -77,7 +99,7 @@ func main() {
 
 	v1.GET("/places", placeHdl.GetPlaces())
 	v1.GET("/places/:id", placeHdl.GetPlaceByID())
-	v1.POST("/places", placeHdl.CreatePlace())
+	v1.POST("/places", mw.RequiredAuth(), mw.RequiredRoles("host", "admin"), placeHdl.CreatePlace())
 	v1.PUT("/places/:id", mw.RequiredAuth(), mw.RequiredRoles("host", "admin"), placeHdl.UpdatePlace())
 	v1.DELETE("/places/:id", mw.RequiredAuth(), mw.RequiredRoles("host", "admin"), placeHdl.DeletePlace())
 
