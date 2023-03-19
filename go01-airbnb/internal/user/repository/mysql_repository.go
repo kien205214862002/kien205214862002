@@ -26,7 +26,7 @@ func (r *userRepository) Create(ctx context.Context, data *usermodel.UserRegiste
 		return common.ErrDB(err)
 	}
 
-	if err := db.Commit().Error; err != nil {
+	if err := db.Commit().Error; err != nil { // co loi
 		db.Rollback()
 		return common.ErrDB(err)
 	}

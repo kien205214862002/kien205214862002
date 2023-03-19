@@ -7,21 +7,24 @@ import (
 )
 
 type PlaceRepository interface {
-	Create(context.Context, *placemodel.Place) error
+	Create(context.Context, *placemodel.Place) error //chac chan trong repo co ham create
 	ListDataWithCondition(context.Context, *common.Paging, *placemodel.Filter, ...string) ([]placemodel.Place, error)
 	FindDataWithCondition(context.Context, map[string]any, ...string) (*placemodel.Place, error)
 	Update(context.Context, map[string]any, *placemodel.Place) error
 	Delete(context.Context, map[string]any) error
 }
 
+// can mot le thuoc tu ben ngoai truyen vao thi can phai co bo doi struct + constructor
 type placeUseCase struct {
-	placeRepo PlaceRepository
+	placeRepo PlaceRepository //goi toi field placerepo thi se goi toi create
 }
 
+// Constructor
 func NewPlaceUseCase(placeRepo PlaceRepository) *placeUseCase {
 	return &placeUseCase{placeRepo}
 }
 
+// chi can return error de khop may ham o duoi
 func (uc *placeUseCase) CreatePlace(ctx context.Context, place *placemodel.Place) error {
 	if err := place.Validate(); err != nil {
 		return common.ErrBadRequest(err)

@@ -25,7 +25,7 @@ func extractTokenFromHeader(r *http.Request) (string, error) {
 // B1: Get token from header
 // B2: Validate token và get payload
 // B3: Từ payload, dùng email để tìm user trong DB
-func (m *middleareManager) RequiredAuth() gin.HandlerFunc {
+func (m *middlewareManager) RequiredAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		token, err := extractTokenFromHeader(c.Request)
 		if err != nil {
@@ -37,11 +37,10 @@ func (m *middleareManager) RequiredAuth() gin.HandlerFunc {
 			panic(err)
 		}
 
-		user, err := m.userRepo.FindDataWithCondition(c.Request.Context(), map[string]any{"email": payload.Email})
+		user, err := m.userRepo.FindDataWithCondition(c.Request.Context(), map[string]any{"id": payload.UserId})
 		if err != nil {
 			panic(err)
 		}
-
 		// Lưu trữ data để có thể được truy cập ở các middleware hoặc handler tiếp theo
 		c.Set("user", user)
 

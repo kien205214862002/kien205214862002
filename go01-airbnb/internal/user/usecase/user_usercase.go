@@ -61,7 +61,7 @@ func (u *userUseCase) Login(ctx context.Context, data *usermodel.UserLogin) (*ut
 		return nil, usermodel.ErrEmailOrPasswordInvalid
 	}
 
-	token, err := utils.GenerateJWT(utils.TokenPayload{Email: user.Email, Role: user.Role}, u.cfg)
+	token, err := utils.GenerateJWT(utils.TokenPayload{UserId: user.Id, Email: user.Email, Role: user.Role}, u.cfg)
 	if err != nil {
 		return nil, common.ErrInternal(err)
 	}

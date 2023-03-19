@@ -1,5 +1,6 @@
 package placerepository
 
+//lam viec voi database
 import (
 	"go.uber.org/zap"
 	"golang.org/x/net/context"
@@ -16,10 +17,12 @@ type placeRepository struct {
 }
 
 // Constructor
+// nho co che implement ngam dinh nen truyen struct voi interface khac nhau
 func NewPlaceRepository(db *gorm.DB, logger *zap.SugaredLogger) *placeRepository {
 	return &placeRepository{db, logger}
 }
 
+// dung context de trace cai log , nhieu ham dung
 // Create place
 func (r *placeRepository) Create(ctx context.Context, place *placemodel.Place) error {
 	db := r.db.Begin()

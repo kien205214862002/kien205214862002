@@ -36,6 +36,7 @@ func (hdl *uploadHandler) Upload() gin.HandlerFunc {
 
 		file, err := fileHeader.Open()
 		if err != nil {
+			fmt.Println("error at line 39:", err)
 			panic(common.ErrBadRequest(err))
 		}
 		defer file.Close()
@@ -60,6 +61,7 @@ func (hdl *uploadHandler) Upload() gin.HandlerFunc {
 
 		if err != nil {
 			// Không thẻ upload file
+			fmt.Println("error at line 64", err)
 			panic(common.ErrBadRequest(err))
 		}
 

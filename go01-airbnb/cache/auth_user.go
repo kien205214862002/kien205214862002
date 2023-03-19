@@ -27,7 +27,6 @@ func NewAuthUserCache(store UserStore, cacheStore Cache) *authUserCache {
 
 func (c *authUserCache) FindDataWithCondition(ctx context.Context, conditions map[string]any) (*usermodel.User, error) {
 	var user usermodel.User
-
 	userId := conditions["id"].(int)
 	key := fmt.Sprintf(cacheKey, userId) // key lưu xuống redis
 

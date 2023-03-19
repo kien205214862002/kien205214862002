@@ -35,16 +35,20 @@ func (u *User) GetUserRole() string {
 }
 
 type UserLogin struct {
-	Email    string `json:"email" gorm:"column:email"`
-	Password string `json:"password" gorm:"column:password"`
+	Email     string `json:"email" gorm:"column:email"`
+	Password  string `json:"password" gorm:"column:password"`
+	FirstName string `json:"firstName" gorm:"column:first_name"`
+	LastName  string `json:"lastName" gorm:"column:last_name"`
 }
 
 type UserRegister struct {
 	common.SQLModel
-	Email    string        `json:"email" gorm:"column:email"`
-	Password string        `json:"password" gorm:"column:password"`
-	Role     string        `json:"-" form:"column:role"`
-	Avatar   *common.Image `json:"avatar" gorm:"column:avatar"`
+	Email     string        `json:"email" gorm:"column:email"`
+	Password  string        `json:"password" gorm:"column:password"`
+	Role      string        `json:"-" form:"column:role"`
+	Avatar    *common.Image `json:"avatar" gorm:"column:avatar"`
+	FirstName string        `json:"firstName" gorm:"column:first_name"`
+	LastName  string        `json:"lastName" gorm:"column:last_name"`
 }
 
 func (u *UserRegister) PrepareCreate() error {

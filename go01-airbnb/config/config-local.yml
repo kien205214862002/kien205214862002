@@ -6,8 +6,8 @@ app:
   MigrationURL: file://migrations
 
 mysql:
-  Host: mysql
-  Port: 3306
+  Host: localhost
+  Port: 3307
   User: root
   Password: 1234
   DBName: go01-airbnb
@@ -20,7 +20,7 @@ aws:
   S3Bucket: go01-airbnb
 
 redis:
-  Host: redis
+  Host: localhost
   Port: 6379
   Password: ""
   DBName: 0

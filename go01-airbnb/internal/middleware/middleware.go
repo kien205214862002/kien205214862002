@@ -10,11 +10,14 @@ type UserRepository interface {
 	FindDataWithCondition(context.Context, map[string]any) (*usermodel.User, error)
 }
 
-type middleareManager struct {
+type middlewareManager struct {
 	cfg      *config.Config
 	userRepo UserRepository
 }
 
-func NewMiddlewareManager(cfg *config.Config, userRepo UserRepository) *middleareManager {
-	return &middleareManager{cfg, userRepo}
+// cfg *config.Config: một con trỏ đến một đối tượng cấu hình config.Config.
+// userRepo UserRepository: một đối tượng UserRepository.
+// Hàm trả về một con trỏ đến một đối tượng middleareManager mới được tạo với các tham số đầu vào được chuyển vào.
+func NewMiddlewareManager(cfg *config.Config, userRepo UserRepository) *middlewareManager {
+	return &middlewareManager{cfg, userRepo}
 }

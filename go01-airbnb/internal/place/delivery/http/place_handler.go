@@ -10,6 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// viet API CRUD trong place
 type PlaceUseCase interface {
 	CreatePlace(context.Context, *placemodel.Place) error
 	GetPlaces(context.Context, *common.Paging, *placemodel.Filter) ([]placemodel.Place, error)
@@ -32,7 +33,7 @@ func (hdl *placeHandler) CreatePlace() gin.HandlerFunc {
 		requester := c.MustGet("user").(common.Requester)
 
 		var place placemodel.Place
-
+		//shouldbind handle loi tra ve
 		if err := c.ShouldBind(&place); err != nil {
 			panic(common.ErrBadRequest(err))
 		}
