@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="WpfApp2.Forms.Tour_Booking"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:local="clr-namespace:WpfApp2.Forms"
+             mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"
+             d:DesignHeight="220" d:DesignWidth="240" Padding="20 10 0 0" >
+    <Border CornerRadius="20" Background="#FEF9EE">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10.539"/>
+                <RowDefinition Height="109.461"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" CornerRadius="20 20 0 0" Grid.RowSpan="2">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Forms/vietnam-round-trip.jpg" x:Name="ImageT"/>
+                </Border.Background>
+            </Border>
+            <Grid Grid.Row="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="37*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Cross Vietnam Tour" Name="name" FontSize="15" Foreground="#41B4AE" Margin="5,0,31,0" FontWeight="SemiBold" Grid.ColumnSpan="2"/>
+                    <TextBlock Grid.Column="1"  Name="Id" HorizontalAlignment="Left" FontSize="15" Foreground="#41B4AE"  Margin="161,0,0,0" FontWeight="SemiBold" TextWrapping="Wrap" Text="01" VerticalAlignment="Center" Height="25" Width="26"/>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                        <Icon:PackIconMaterial Kind="MapMarker" Width="15" Height="15" Foreground="#FF7657" Margin="10 5 0 0"/>
+                        <TextBlock Text="Vietnam" FontSize="13" Name="Location" FontWeight="SemiBold" FontStyle="Italic" Foreground="#A0A0A0" Margin="5 5 0 0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="2">
+                        <Icon:PackIconMaterial Kind="Account" Width="15" Height="15" Foreground="#FF7657" Margin="10 5 0 0"/>
+                        <TextBlock Text="10 People" Name="Size" FontSize="13" FontWeight="SemiBold" FontStyle="Italic" Foreground="#A0A0A0" Margin="5 5 0 0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                        <Icon:PackIconMaterial Kind="Cash" Width="15" Height="15" Foreground="#FF7657" Margin="10 5 0 0"/>
+                        <TextBlock Text="$100" Name="Price" FontSize="13" FontWeight="SemiBold" FontStyle="Italic" Foreground="#A0A0A0" Margin="5 5 0 0"/>
+                        <Button x:Name="buttonView" Content="View" FontWeight="SemiBold" Style="{StaticResource ChangePassButton}" Height="20" Width="80" Margin="70 0 0 0" FontSize="10" Click="buttonView_Click"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

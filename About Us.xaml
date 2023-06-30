@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="WpfApp2.Forms.About_Us"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp2.Forms"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             d:DesignHeight="620" d:DesignWidth="980">
+    <Border CornerRadius="25" Padding="20" Background="#FFFFFF" Height="610" Width="980">
+        <Border CornerRadius="25" Height="610" Width="980">
+            <Border.Background>
+                <ImageBrush ImageSource="/Image/Picture1.png"/>
+            </Border.Background>
+            </Border>
+    </Border>
+</UserControl>

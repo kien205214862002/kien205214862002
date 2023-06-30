@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="018741ec1af1ec991835a085317ebc26.jpg" />
+    <None Remove="1957947.jpg" />
+    <None Remove="2135329.webp" />
+    <None Remove="best travel-logos_white.png" />
+    <None Remove="besttravel-logos_white.png" />
+    <None Remove="flat-color-icons_google.png" />
+    <None Remove="Forms\1.jpg" />
+    <None Remove="Forms\2D41A0F3B7024439B334_66031820.jpg" />
+    <None Remove="Forms\325193-khach-san-muong-thanh-luxury-buon-ma-thuot-5-phong-deluxe-2n1d-bao-gom-an-sang-an-trua-toi-khong-phu-thu-cuoi-tuan.jpg" />
+    <None Remove="Forms\Group 1.png" />
+    <None Remove="Forms\Rectangle 84.png" />
+    <None Remove="Forms\thong-tin-buon-me-thuot-o-dau-thuoc-tinh-nao-h1-gigapixel.jpg" />
+    <None Remove="Forms\от 24840 за 3х1,2.jpg" />
+    <None Remove="Group 102.png" />
+    <None Remove="Group 103.png" />
+    <None Remove="Image\Group 1.png" />
+    <None Remove="Image\Rectangle 84.png" />
+    <None Remove="logos_facebook.png" />
+    <None Remove="photo-1528543606781-2f6e6857f318.jfif" />
+    <None Remove="sk.jpg" />
+    <None Remove="thong-tin-buon-me-thuot-o-dau-thuoc-tinh-nao-h1-gigapixel.jpg" />
+    <None Remove="Vector.png" />
+    <None Remove="Vectorkey.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="018741ec1af1ec991835a085317ebc26.jpg" />
+    <Resource Include="1957947.jpg" />
+    <Resource Include="2135329.webp" />
+    <Resource Include="besttravel-logos_white.png" />
+    <Resource Include="flat-color-icons_google.png" />
+    <Resource Include="Forms\1.jpg" />
+    <Resource Include="Forms\2D41A0F3B7024439B334_66031820.jpg" />
+    <Resource Include="Forms\325193-khach-san-muong-thanh-luxury-buon-ma-thuot-5-phong-deluxe-2n1d-bao-gom-an-sang-an-trua-toi-khong-phu-thu-cuoi-tuan.jpg" />
+    <Resource Include="Forms\thong-tin-buon-me-thuot-o-dau-thuoc-tinh-nao-h1-gigapixel.jpg" />
+    <Resource Include="Forms\от 24840 за 3х1,2.jpg" />
+    <Resource Include="Group 102.png" />
+    <Resource Include="Group 103.png" />
+    <Resource Include="Image\Group 1.png" />
+    <Resource Include="Image\Rectangle 84.png" />
+    <Resource Include="logos_facebook.png" />
+    <Resource Include="photo-1528543606781-2f6e6857f318.jfif" />
+    <Resource Include="sk.jpg" />
+    <Resource Include="thong-tin-buon-me-thuot-o-dau-thuoc-tinh-nao-h1-gigapixel.jpg" />
+    <Resource Include="Vector.png" />
+  </ItemGroup>
+
+</Project>

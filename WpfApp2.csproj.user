@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Forms\About Us.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Administration.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Car_Rental.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Car_Rental_Bookingxaml.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Car_Rental_Details.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Chart.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Home.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Hotel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Hotel_Booking.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Hotel_Card.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Hotel_Info.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Payment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Plane_Ticket.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Plane_Ticket_Booking.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Plane_Ticket_Detail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Profile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Tour.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Tour_Booking.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Tour_Details.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Tour_Package.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SignUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="App.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\About Us.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Administration.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Car_Rental.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Car_Rental_Bookingxaml.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Car_Rental_Details.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Chart.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Home.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Hotel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Hotel_Booking.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Hotel_Card.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Hotel_Info.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Payment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Plane_Ticket.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Plane_Ticket_Booking.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Plane_Ticket_Detail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Profile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Tour.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Tour_Booking.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Tour_Details.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Tour_Package.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SignUp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

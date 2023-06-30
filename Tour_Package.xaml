@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="WpfApp2.Forms.Tour_Package"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp2.Forms"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" d:DesignHeight="150" d:DesignWidth="140"
+             >
+    <Border Style="{StaticResource whiteBorder}" >
+
+        <Grid>
+            <Border CornerRadius="15" Height="150" Width="140" Margin="-20,-21,-20,-19">
+                <Border.Background>
+                    <ImageBrush  x:Name="ImageT" ImageSource="/WpfApp2;component/Forms/thong-tin-buon-me-thuot-o-dau-thuoc-tinh-nao-h1-gigapixel.jpg" Stretch="Fill" />
+                </Border.Background>
+            </Border>
+            <Border CornerRadius="5" Background="Black" Opacity="0.7"  Width="40" Height="20" Margin="35,-55,-55,60">
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="labelRank"  Content="4.5" Foreground="#FF7657" FontSize="10" FontFamily="Century Gothic" Background="Transparent"/>
+                    <Icon:PackIconMaterial Kind="Star" Margin="0 5 0 0"  Background="Transparent" Foreground="#FF7657" Width="10" Height="10" RenderTransformOrigin="0.478,1.105"/>
+                </StackPanel>
+            </Border>
+            <Border CornerRadius="0 0 15 15" Background="Black" Opacity="0.7"  Width="140" Height="40" Margin="-20,90,-20,-20" >
+                <StackPanel Orientation="Vertical">
+                    <Label x:Name="labelNameTour" Content="Buon Me Thuot City" Foreground="#FF7657" FontWeight="Bold" FontSize="10" FontFamily="Tahoma" Background="Transparent"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="MapMarkerCircle" Margin="5 -2 0 0" Background="Transparent" Foreground="#FF7657" Width="10" Height="10"/>
+                        <Label x:Name="labelTour_Country" Margin="-2 -7 0 0" Content="VietNam" Foreground="#FF7657" FontSize="8" FontFamily="Century Gothic" Background="Transparent"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+    </Border>
+</UserControl>
