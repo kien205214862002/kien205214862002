@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-
+sáafsafsa
 func main() {
 	// Tạo slice
 	// Nếu truyền giá trị vào cặp [] thì là tạo array
