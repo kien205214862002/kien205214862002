@@ -1,8 +1,8 @@
 package main
 
 import "fmt"
-sáafsafsa
-func main() {
+sáafsafsasadsasa
+func main() {sadsafsafsafsa
 	// Tạo slice
 	// Nếu truyền giá trị vào cặp [] thì là tạo array
 	// Nếu không truyền giá trị vào cặp [] thì là tạo slice
